@@ -82,3 +82,35 @@ header = str_sub(emails, end = split[,1])
 body = str_sub(emails, start = split[,2])
 
 cat(body[1])
+
+##Second lab
+
+fruit = c("apple", "banana", "pear", "pineapple")
+
+#2
+
+#detects if the pattern is found
+str_detect(fruit, "a") #if a is in the dataset
+str_detect(fruit, "^a") #starts with a
+str_detect(fruit, "a$") #ends with an a
+str_detect(fruit, "[aeiou]") #contains any vowel, the [] represents the r
+str_detect(fruit, "[a-d]") #contains any letter from a to d
+str_detect(fruit, "[0-9]") #checks for numeric elements
+
+#3
+str_detect(fruit, "^a[a-z]{0,}e$")
+#or
+str_detect(fruit, "^a[a-z]*e$")
+#or
+str_detect(fruit, "^a.*e$") #the . means it could be any character or number
+
+##4
+
+phone = c("213 740 4826", "213-740-4826", "(213) 740 4826")
+str_detect(phone, "[(]?[0-9]{3}[)]?.[0-9]{3}.[0-9]{4}")
+
+?str_extract
+
+str_extract_all(body, "[(]?[0-9]{3}[)]?.[0-9]{3}.[0-9]{4}")
+
+
